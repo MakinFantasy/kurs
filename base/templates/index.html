@@ -6,17 +6,17 @@
 		<!-- Left -->
 		<div class="col-md-7">
 			<div class="card mb-3">
-			  <img src="media/{{post.image}}" class="card-img-top" alt="{{post.title}}">
+			  <img src="media/{{product.image}}" class="card-img-top" alt="{{product.title}}">
 			  <div class="card-body">
-			    <h5 class="card-title">{{post.title}}</h5>
+			    <h5 class="card-title">{{product.title}}</h5>
 			    <hr/>
-			    <p class="card-text"><a href="/detail/{{post.id}}" class="btn btn-sm btn-primary btn-success">Read Full</a></p>
+			    <p class="card-text"><a href="/detail/{{product.id}}" class="btn btn-sm btn-primary btn-success">Read Full</a></p>
 			  </div>
 			</div>
 		</div>
 		<!-- Right -->
 		<div class="col-md-5" style="max-height: 450px; overflow: auto;">
-			{% for p in posts %}
+			{% for p in product %}
 			<!-- News Box -->
 			<div class="card">
 			  <div class="row no-gutters">

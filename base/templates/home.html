@@ -6,19 +6,19 @@
 		<!-- Left -->
 		<div class="col-md-7">
 			<div class="card mb-3">
-			  <img src="media/{{post.image}}" class="card-img-top" alt="{{post.title}}">
-			  <div class="card-body">
-			    <h5 class="card-title">{{post.title}}</h5>
+			  <img src="media/{{product.image}}" class="card-img-top" alt="{{product.title}}">
+			  <div class="card-body bg-info">
+			    <h5 class="card-title">{{product.title}}</h5>
 			    <hr/>
-			    <p class="card-text"><a href="/detail/{{post.id}}" class="btn btn-sm btn-primary btn-success">Read Full</a></p>
+			    <p class="card-text"><a href="/detail/{{product.id}}" class="btn btn-sm btn-primary btn-success">Read Full</a></p>
 			  </div>
 			</div>
 		</div>
 		<!-- Right -->
 		<div class="col-md-5" style="max-height: 450px; overflow: auto;">
-			{% for p in posts %}
+			{% for p in products %}
 			<!-- News Box -->
-			<div class="card">
+			<div class="card bg-info border-light">
 			  <div class="row no-gutters">
 			    <div class="col-md-4">
 					<img src="media/{{p.image}}" class="card-img-top" alt="{{p.title}}">
@@ -37,7 +37,7 @@
 	</div>
 	<!-- Category Wise News -->
 	{% for category in categories %}
-	<h3 class="border-bottom pb-1">{{category.title}} <a href="/category/{{category.id}}" class="float-right btn btn-sm btn-dark">In this Category</a></h3>
+	<h3 class="border-bottom pb-1 text-light">{{category.title}} <a href="/category/{{category.id}}" class="float-right btn btn-sm btn-dark">In this Category</a></h3>
 	<div class="row my-4">
 		{% for news in category.news_set.all %}
 			{% if forloop.counter < 5 %}

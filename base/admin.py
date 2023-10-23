@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Category, Post, Comment, Tag
+from .models import Category, Product, Comment, Tag
 # Register your models here.
 
 
 class CategoryPostInline(admin.TabularInline):
-    model = Post
+    model = Product
     extra = 1
 
 
@@ -28,22 +28,21 @@ class AdminPost(admin.ModelAdmin):
     filter_horizontal = ['tags']
 
 
-
 class AdminComment(admin.ModelAdmin):
-    list_display = ('title', 'post', 'email', 'content', 'status')
-    list_filter = ['status', 'post']
-    search_fields = ['post__title', 'title']
-    raw_id_fields = ['post']
+    list_display = ('title', 'product', 'email', 'content', 'status')
+    list_filter = ['status', 'product']
+    search_fields = ['product__title', 'title']
+    raw_id_fields = ['product']
 
 
 class AdminTag(admin.ModelAdmin):
     list_display = ('title', 'date_created')
     list_filter = ['date_created']
     search_fields = ['title']
-    raw_id_fields = ['post']
+    raw_id_fields = ['product']
 
 
-admin.site.register(Post, AdminPost)
+admin.site.register(Product, AdminPost)
 admin.site.register(Comment, AdminComment)
 admin.site.register(Tag, AdminTag)
 

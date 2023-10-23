@@ -25,16 +25,17 @@ class Tag(models.Model):
 		return self.title
 
 
-class Post(models.Model):
+class Product(models.Model):
 	title = models.CharField(max_length=100)
 	content = models.TextField()
 	image = models.ImageField(upload_to='images/')
 	date_created = models.DateTimeField(timezone.now())
 	category = models.ForeignKey(Category, on_delete=models.CASCADE)
 	tags = models.ManyToManyField(Tag)
+	price = models.IntegerField()
 
 	class Meta:
-		verbose_name_plural = "Posts"
+		verbose_name_plural = "Products"
 
 	def __str__(self):
 		return self.title
@@ -45,7 +46,7 @@ class Comment(models.Model):
 	content = models.TextField()
 	email = models.EmailField(max_length=254)
 	status = models.BooleanField(default=False)
-	post = models.ForeignKey(Post, on_delete=models.CASCADE)
+	product = models.ForeignKey(Product, on_delete=models.CASCADE)
 
 	class Meta:
 		verbose_name_plural = "Comments"

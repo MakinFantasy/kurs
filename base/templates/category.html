@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
 <main class="container mt-3 mb-5">
-	<h3 class="border-bottom pb-1 my-4">All Categories</h3>
+	<h3 class="border-bottom pb-1 my-4 text-info">All Categories</h3>
 	<div class="row">
 		<!-- Category Box -->
 		{% for cat in categories %}
 		<div class="col-md-4">
-			<div class="card mb-3 shadow">
+			<div class="card mb-3 shadow bg-info">
             <img src="/media/{{cat.image}}" class="card-img-top" alt="{{cat.title}}">
 			  <div class="card-body">
 			    <h5 class="card-title">{{cat.title}}</h5>
 			    <hr/>
-			    <p class="card-text"><a href="category/{{cat.id}}" class="btn btn-sm btn-primary btn-success">All News</a></p>
+			    <p class="card-text"><a href="category/{{cat.id}}" class="btn btn-sm btn-primary btn-success">All Products</a></p>
 			  </div>
 			</div>
 		</div>

@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{% block title %}Home Page{% endblock %}</title>
+	<title>{% block title %}Music.Shop{% endblock %}</title>
 	<!-- Bootstrap 4 CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bs4/bootstrap.min.css' %}" />
 </head>
-<body>
+<body class="bg-dark">
 	<!-- Top News -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-info" style="height: 70px">
 		<div class="container">
-		  <a class="navbar-brand" href="/">News</a>
+		  <a class="navbar-brand" href="/">Music.Shop</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -20,7 +20,7 @@
 		        <a class="nav-link" href="/">Home</a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'news' %}">All News</a>
+		        <a class="nav-link" href="{% url 'products' %}">All Products</a>
 		      </li>
 		      <li class="nav-item">
 		        <a class="nav-link" href="{% url 'categories' %}">All Categories</a>
@@ -36,10 +36,7 @@
 <hr/>
 <footer class="text-muted">
   <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Fast News is example of <a href="https://projectsplaza.com/">Django Projects</a>, but please download and customize it for yourself!</p>
+    <p style="margin-left: 500px">Done by @jutee7</p>
   </div>
 </footer>
 </body>
