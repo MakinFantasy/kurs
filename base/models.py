@@ -47,9 +47,20 @@ class Comment(models.Model):
 	email = models.EmailField(max_length=254)
 	status = models.BooleanField(default=False)
 	product = models.ForeignKey(Product, on_delete=models.CASCADE)
+	date_created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
 		verbose_name_plural = "Comments"
 
 	def __str__(self):
 		return self.title
+
+
+class Subscriber(models.Model):
+	name = models.CharField(max_length=50)
+	email = models.EmailField(unique=True, max_length=200)
+	date_created = models.DateTimeField(null=True, blank=True)
+	date_updated = models.DateTimeField(null=True, blank=True)
+
+	def __str__(self):
+		return self.email

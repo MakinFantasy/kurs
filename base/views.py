@@ -1,9 +1,11 @@
 from django.contrib import messages
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 
-from base.models import Product, Category, Comment
+from .forms import SubscribeForm
+
+from base.models import Product, Category, Comment, Subscriber
 
 
 # Create your views here.
@@ -90,4 +92,16 @@ def product_detail_view(request, id):
 			'comments': comments
 		}
 	)
+
+
+def subscribe(request):
+	if request.method == 'POST':
+		form = SubscribeForm(request.POST)
+		if form.is_valid():
+			form.save()
+			return redirect('/')
+	else:
+		form = SubscribeForm()
+	context = {'form': form}
+	return render(request, 'subscribe.html', context)
 

@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'base',
+
+    'request'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'request.middleware.RequestMiddleware'
 ]
 
 ROOT_URLCONF = 'djangoProject.urls'
@@ -138,3 +141,7 @@ DEFAULT_FROM_EMAIL = "beingp0z1t1v3@gmail.com"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+REQUEST_IGNORE_PATHS = (
+    r'^admin/',
+)

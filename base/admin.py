@@ -1,6 +1,17 @@
 from django.contrib import admin
-from .models import Category, Product, Comment, Tag
+from .models import Category, Product, Comment, Tag, Subscriber
 # Register your models here.
+
+
+class AdminSubscriber(admin.ModelAdmin):
+    list_display = ('email', 'name', 'date_created', 'date_updated')
+    list_display_links = ['email', 'name', 'date_created', 'date_updated', ]
+    list_filter = ['date_created', 'date_updated', ]
+    search_fields = ['name']
+    date_hierarchy = 'date_created'
+
+
+admin.site.register(Subscriber, AdminSubscriber)
 
 
 class CategoryPostInline(admin.TabularInline):

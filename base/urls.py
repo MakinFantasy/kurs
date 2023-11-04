@@ -9,5 +9,6 @@ urlpatterns = [
 	path('products', views.products_list, name='products'),
 	path('category/<int:id>', views.category, name='category'),
 	path('categories', views.categories, name='categories'),
-	path('detail/<int:id>', views.product_detail_view, name='details')
+	path('detail/<int:id>', views.product_detail_view, name='details'),
+	path('subscribe', views.subscribe, name='subscribe')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
